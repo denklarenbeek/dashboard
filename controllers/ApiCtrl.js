@@ -29,14 +29,13 @@ exports.importOrders = async (req, res) => {
         try {
             const orderExist = await Order.find({ id: item.id });
             if (orderExist.length > 0) {
-                console.log("existing one, lets update", orderExist);
                 await Order.findByIdAndUpdate(orderExist[0]._id, newOrder);
             } else {
                 const savedOrder = await Order.create(newOrder);
             }
-            res.render("dashboard");
         } catch (error) {
             console.error(error);
         }
     });
+    res.redirect("/");
 };

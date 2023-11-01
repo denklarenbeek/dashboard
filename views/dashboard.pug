@@ -20,3 +20,8 @@ block content
                 .sales_number_content 
                     p.title Forecast To Go
                     p.number.negative € #{delta}
+    .bottom 
+        p.title Orders this week 
+        p.number € #{thisWeek}
+    .navigation
+        a(href="/admin/import") Import
