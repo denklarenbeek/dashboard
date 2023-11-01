@@ -1,0 +1,9 @@
+extends layout.pug
+
+block content
+    h1 Sales Countdown
+    .wrapper
+        form(action='/api/import', method="POST" encType="multipart/form-data")
+            input(type="file", name="import") 
+            button(type="submit") Import
+    

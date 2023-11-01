@@ -5,10 +5,14 @@ const MongoStore = require("connect-mongo");
 const cookieParser = require("cookie-parser");
 const path = require("path");
 
+const connectDB = require("./config/connectDB");
+
 require("dotenv").config({ path: "variables.env" });
 
 const app = express();
 const PORT = process.env.PORT || 3000;
+
+connectDB();
 
 // Init Middleware
 app.set("view engine", "pug");
@@ -33,6 +37,8 @@ app.use(cookieParser());
 // app.use(this.sessionMiddleWare);
 
 app.use("/", require("./router/dashboard"));
+app.use("/admin", require("./router/admin"));
+app.use("/api", require("./router/api"));
 
 app.listen(PORT, () => {
     console.log(`Server is running on port: ${PORT}`);
