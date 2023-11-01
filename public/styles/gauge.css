@@ -1,0 +1,67 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;700&family=Montserrat:ital,wght@1,100;1,200;1,300&family=Nunito+Sans:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=Open+Sans:wght@300;400;700&display=swap");
+
+* {
+    font-family: "IBM Plex Sans", sans-serif;
+}
+
+body {
+    background-color: #efeff0;
+}
+
+h1 {
+    text-align: center;
+    font-size: 54px;
+    position: fixed;
+    top: 10px;
+    left: 0;
+    right: 0;
+    margin: 0px;
+}
+
+.wrapper {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+}
+
+.content {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+}
+
+.sales_number {
+    background-color: white;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 22%;
+    height: calc(22vw);
+    padding: 10px;
+    box-shadow: 5px 2px 5px 0px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.sales_number .title {
+    width: 100%;
+    font-size: 30px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.sales_number .number {
+    font-weight: bold;
+    font-size: 26px;
+    color: #00a4ff;
+}
+
+.postive {
+    color: #66cc99;
+}
+
+.negative {
+    color: #c44d56 !important;
+}
