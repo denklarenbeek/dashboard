@@ -51,5 +51,6 @@ exports.dashboard = async (req, res) => {
         thisWeek: formatCurrency(orderValueThisWeek),
         lastWeek: formatCurrency(orderValueLastWeek),
         weektarget: formatCurrency(weekTargetOrderIntake),
+        weeksToGo: formatCurrency(numberOfWeeksLeft),
     });
 };
