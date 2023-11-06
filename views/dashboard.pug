@@ -20,8 +20,18 @@ block content
                 .sales_number_content 
                     p.title Forecast To Go
                     p.number.negative € #{delta}
-    .bottom 
-        p.title Orders this week 
-        p.number € #{thisWeek}
+    .bottom
+        .weeknumber.full_width
+            p.title Orders this week 
+            p.number € #{thisWeek}
+        .weeknumber.lighter(style='margin-right: 20px')
+            p.title Orders last week 
+            p.number € #{lastWeek}
+        .weeknumber.lighter
+            p.title Week Target
+            p.number € #{weektarget}
+            span (Forecast to go / weeks left)
+
+        
     .navigation
         a(href="/admin/import") Import
