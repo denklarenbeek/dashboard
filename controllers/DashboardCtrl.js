@@ -41,7 +41,7 @@ exports.dashboard = async (req, res) => {
     const orderValueLastWeek = calculateWeekOrderIntake(orders, lastWeek);
 
     const numberOfWeeksLeft = weekEndYear + 1 - thisWeek; // Add one week to make sure the actual week is also calculated
-    const weekTargetOrderIntake = forecastDelta / numberOfWeeksLeft;
+    const weekTargetOrderIntake = forecastDelta / (numberOfWeeksLeft - 1);
 
     res.render("dashboard", {
         total: formatCurrency(totalValue),
