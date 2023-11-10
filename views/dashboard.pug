@@ -3,6 +3,7 @@ extends layout.pug
 block content
     h1 Sales Countdown
         span #{weeksToGo} weeks to Christmas
+        span(style="top: 120px;font-size: 12px") #{daystoBirthdayBo} days to Birthday Bo
     .wrapper
         section.content
             .sales_number
@@ -24,7 +25,7 @@ block content
     .bottom
         .weeknumber.full_width
             p.title Orders this week 
-            p.number € #{thisWeek}
+            p.number(class=positiveWeekTarget ? "positive" : "") € #{thisWeek}
         .weeknumber.lighter(style='margin-right: 20px')
             p.title Orders last week 
             p.number € #{lastWeek}

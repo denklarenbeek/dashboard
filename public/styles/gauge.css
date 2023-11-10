@@ -72,12 +72,16 @@ h1 span {
     position: relative;
 }
 
-.postive {
+.positive {
     color: #66cc99;
 }
 
 .negative {
     color: #c44d56 !important;
+}
+
+.number.positive {
+    font-weight: bold;
 }
 
 .bottom {
