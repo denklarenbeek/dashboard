@@ -51,6 +51,7 @@ exports.dashboard = async (req, res) => {
 
     const numberOfWeeksLeft = weekEndYear + 1 - thisWeek; // Add one week to make sure the actual week is also calculated
     const weekTargetOrderIntake = forecastDelta / (numberOfWeeksLeft - 1);
+    const positiveWeekTarget = weekTargetOrderIntake - orderValueThisWeek < 0;
 
     res.render("dashboard", {
         total: formatCurrency(totalValue),
@@ -59,7 +60,7 @@ exports.dashboard = async (req, res) => {
         delta: formatCurrency(forecastDelta),
         thisWeek: formatCurrency(orderValueThisWeek),
         lastWeek: formatCurrency(orderValueLastWeek),
-        positiveWeekTarget: true,
+        positiveWeekTarget: positiveWeekTarget,
         weektarget: formatCurrency(weekTargetOrderIntake),
         weeksToGo: formatCurrency(numberOfWeeksLeft),
         daystoBirthdayBo: daystoBirthdayBo,
