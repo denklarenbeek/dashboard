@@ -11,8 +11,6 @@ const daystoBirthdayBo = Math.floor(
     moment.duration(birthdayBo.diff(today)).asDays()
 );
 
-console.log(daystoBirthdayBo);
-
 const calculateWeekOrderIntake = (orders, weeknumber) => {
     const value = orders.reduce((total, current) => {
         const orderWeek = moment(current.date).week();
