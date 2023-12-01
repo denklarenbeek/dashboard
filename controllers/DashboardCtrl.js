@@ -4,9 +4,6 @@ const { formatCurrency } = require("../utils/formatting");
 
 const targetQ4 = 3880021;
 
-const birthdayBo = moment("2023-12-18", "YYYY-MM-DD");
-const today = moment(new Date(), "YYYY-MM-DD");
-
 const calculateWeekOrderIntake = (orders, weeknumber) => {
     const value = orders.reduce((total, current) => {
         const orderWeek = moment(current.date).week();
@@ -28,6 +25,9 @@ exports.dashboard = async (req, res) => {
     const totalValue = orders.reduce((total, current) => {
         return total + current.value;
     }, 0);
+
+    const birthdayBo = moment("2023-12-18", "YYYY-MM-DD");
+    const today = moment(new Date(), "YYYY-MM-DD");
 
     const daystoBirthdayBo = Math.floor(
         moment.duration(birthdayBo.diff(today)).asDays()

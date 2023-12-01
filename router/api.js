@@ -5,6 +5,6 @@ const { multerUploads } = require("../middleware/fileHandler");
 const router = express.Router();
 
 router.post("/import", multerUploads, importOrders);
-router.post("/dropcollection", dropDBCollection);
+// router.post("/dropcollection", dropDBCollection);
 
 module.exports = router;
