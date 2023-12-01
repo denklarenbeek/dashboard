@@ -1,6 +1,7 @@
 const excelToJson = require("convert-excel-to-json");
 const moment = require("moment");
 const Order = require("../models/Order");
+const mongoose = require("mongoose");
 
 exports.importOrders = async (req, res) => {
     const result = excelToJson({
@@ -39,3 +40,15 @@ exports.importOrders = async (req, res) => {
     });
     res.redirect("/");
 };
+
+// exports.dropDBCollection = async (req, res, next) => {
+//     const { database } = req.body;
+//     console.log(database);
+
+//     try {
+//         const response = await mongoose.connection.db.dropColection(database);
+//         console.log(response);
+//     } catch (error) {
+//         console.error(error);
+//     }
+// };
