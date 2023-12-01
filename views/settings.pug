@@ -1,0 +1,12 @@
+extends layout.pug
+
+block content
+    h1 Settings
+    .wrapper
+        .section
+            form(action='/api/import', method="POST" encType="multipart/form-data")
+                input(type="file", name="import") 
+                button(type="submit") Import
+            form(action='/api/settarget', method="POST")
+                input(type="number", name="targetQ4" value=targetQ4) 
+                button(type="submit") Update Target

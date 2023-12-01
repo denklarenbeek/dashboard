@@ -37,6 +37,12 @@ h1 span {
     justify-content: center;
     align-items: center;
     height: 100vh;
+    flex-wrap: wrap;
+}
+
+.wrapper form {
+    width: 500px;
+    justify-content: space-between;
 }
 
 .content {
@@ -135,4 +141,8 @@ h1 span {
     border-radius: 4px;
     color: white;
     text-decoration: none;
+}
+
+.section form {
+    display: flex;
 }

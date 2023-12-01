@@ -2,7 +2,7 @@ const moment = require("moment");
 const Order = require("../models/Order");
 const { formatCurrency } = require("../utils/formatting");
 
-const targetQ4 = 3880021;
+const targetQ4 = 3145214;
 
 const calculateWeekOrderIntake = (orders, weeknumber) => {
     const value = orders.reduce((total, current) => {
@@ -63,4 +63,8 @@ exports.dashboard = async (req, res) => {
         weeksToGo: formatCurrency(numberOfWeeksLeft),
         daystoBirthdayBo: daystoBirthdayBo,
     });
+};
+
+exports.settings = async (req, res, next) => {
+    res.render("settings", { targetQ4 });
 };
