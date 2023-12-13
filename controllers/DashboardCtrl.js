@@ -2,7 +2,7 @@ const moment = require("moment");
 const Order = require("../models/Order");
 const { formatCurrency } = require("../utils/formatting");
 
-const targetQ4 = 3145214;
+const targetQ4 = 3621592;
 
 const calculateWeekOrderIntake = (orders, weeknumber) => {
     const value = orders.reduce((total, current) => {
